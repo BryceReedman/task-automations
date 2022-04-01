@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  appache:
+    image: htppd
+    build:
+      context: ./httpd
+      dockerfile: ./Dockerfile
+    ports:
+      - "41062:80"
+      - "41061:22"
+    links:
+      - automationsheduler
+    networks:
+      services:
+        aliases:
+          - "httpserver"
+
+  automationsheduler:
+    image: automationsheduler
+    build:
+      context: ./nodejs
+      dockerfile: ./Dockerfile
+    networks:
+      services:
+        aliases:
+           - app
+    environment:
+      NODE_ENV: development
+    ports:
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "app.js"]

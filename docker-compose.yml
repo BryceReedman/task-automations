@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  appache:
+    image: htppd
+    build:
+      context: ./httpd
+      dockerfile: ./Dockerfile
+    ports:
+      - "41062:80"
+      - "41061:22"
+    links:
+      - automationsheduler
+    networks:
+      services:
+        aliases:
+          - "httpserver"
+
+  automationsheduler:
+    image: automationsheduler
+    build:
+      context: ./nodejs
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    networks:
+      services:
+        aliases:
+           - app
+
+networks:
+  services:

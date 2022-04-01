@@ -1,0 +1,16 @@
+{
+    "name": "automation-sheduler",
+    "version": "0.0.1",
+    "description": "Nodejs sheets automation sheduler",
+    "author": "Bryce Reedman <bryce.rm.reedman@gmail.com>",
+    "license": "GPL",
+    "main": "app.js",
+    "keywords": [
+      "nodejs",
+      "express"
+    ],
+    "dependencies": {
+      "express": ">=5.0.0-beta.1",
+      "winston": ">=3.6.0"
+    }
+  }
