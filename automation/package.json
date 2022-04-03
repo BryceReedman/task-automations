@@ -6,11 +6,9 @@
     "license": "GPL",
     "main": "app.js",
     "keywords": [
-      "nodejs",
-      "express"
+        "nodejs"
     ],
     "dependencies": {
-      "express": ">=5.0.0-beta.1",
-      "winston": ">=3.6.0"
+        "winston": ">=3.6.0"
     }
-  }
+}

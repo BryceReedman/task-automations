@@ -1,8 +1,5 @@
-const express = require('express')
-const app = express()
-const port = 3000
-
 const winston = require('winston');
+
 const { combine, timestamp, json } = winston.format;
 
 const logger = winston.createLogger({
@@ -12,10 +9,7 @@ const logger = winston.createLogger({
 });
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
-  
-  app.listen(port, () => {
-    logger.info(`Example app listening on port ${port}`)
-  })
+logger.info(`Starting Automation Scheduler`)
+
+
+
